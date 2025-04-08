@@ -94,26 +94,39 @@
         }
 
         .notes-title {
-
             color: var(--primary);
-
             margin: 0;
-
             display: flex;
-
             align-items: center;
-
+            font-size: 1.5rem; /* Larger size */
+            font-weight: 700; /* Bolder */
+            letter-spacing: -0.5px; /* Tighter letter spacing */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+            position: relative;
+            padding-left: 15px; /* Space for accent */
         }
 
-        .icon {
-
-            width: 20px;
-
-            height: 20px;
-
-            margin-right: 10px;
-
+        /* Accent bar before title */
+        .notes-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5%;
+            bottom: 5%;
+            width: 4px;
+            background: var(--primary);
+            border-radius: 2px;        
         }
+
+
+        /* Larger icon to match bigger title */
+        .notes-title .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+        }
+
+
 
         .add-note-btn {
 
@@ -205,14 +218,21 @@
 
         }
 
+        /* Enhanced date styling */
         .note-date {
-
-            font-weight: 600;
-
+            font-weight: 700; /* Bolder */
             color: var(--primary);
-
             margin-bottom: 5px;
+            font-size: 1.1rem; /* Larger */
+            display: flex;
+            align-items: center;
+        }
 
+        /* Date accent */
+        .note-date::before {
+            content: '📅'; /* Calendar icon */
+            margin-right: 8px;
+            font-size: 0.9em;
         }
 
         .note-doctor {
@@ -779,7 +799,7 @@
 
                             const noteData = {
 
-                                field_3930959: ${PATIENT_ID},
+                                "Patient ID": ${PATIENT_ID},
 
                                 Date: document.getElementById('noteDate').value,
 
