@@ -341,7 +341,7 @@
 
     
 
-    <div class="divider"></div>
+    <div class="red-divider"></div>
 
     <div class="notes-container">
 
@@ -876,6 +876,18 @@
         // Initialize
 
         document.addEventListener('DOMContentLoaded', fetchNotes);
+
+        // Just modify the toggleNote function to add/remove expanded class
+        function toggleNote(index) {
+            const noteItem = document.getElementById(`noteContent${index}`).parentElement;
+            const content = document.getElementById(`noteContent${index}`);
+            const icon = content.previousElementSibling.querySelector('.expand-icon');
+            
+            noteItem.classList.toggle('expanded');
+            content.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+    </script>
 
     </script>
 
